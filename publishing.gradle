@@ -1,5 +1,10 @@
 apply plugin: 'maven-publish'
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         shadow(MavenPublication) { publication ->
