@@ -13,8 +13,8 @@ buildscript {
 
 Rcon rcon = new Rcon("127.0.0.1", 9999, "epicebic".getBytes())
 
-gradle.taskGraph.whenReady { taskGraph ->
-    if (taskGraph.hasTask(":shadowJar")) {
+tasks.register('reload') {
+    doLast {
         rcon.command("reload confirm")
     }
 }
