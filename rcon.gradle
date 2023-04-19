@@ -15,9 +15,6 @@ Rcon rcon = new Rcon("127.0.0.1", 9999, "epicebic".getBytes())
 
 tasks.register('reload') {
     doLast {
-        def sourceFile = file("./target/${project.name}-${project.version}.jar")
-        def destDir = file("C:\\Users\\immrt\\Desktop\\Minecraft-Servers\\1.19.3\\plugins")
-        sourceFile.copyTo(new File(destDir, sourceFile.getName()))
         rcon.command("reload confirm")
     }
 }
