@@ -18,3 +18,5 @@ tasks.register('reload') {
         rcon.command("reload confirm")
     }
 }
+
+shadowJar.finalizedBy reload
